@@ -42,3 +42,8 @@ If your run into issues installing the dependencies with NPM, use this below com
 # Install dependencies with all permissions
 $ sudo npm install --unsafe-perm=true --allow-root
 ```
+
+## Future improvement plan
+
+- Maintaining states with help of redux
+- Storing data of users in database and then re-routing to their final calculated salary page.
