@@ -4,7 +4,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 function CTC(props) {
-  //   console.log({ ...props });
   //   const salaryComponents = [{ ...props }];
   const [ctc, setCTC] = useState(parseInt(props.costToCompany)); // done
   const [range, setRange] = useState();
@@ -13,7 +12,7 @@ function CTC(props) {
   const [dearNess, setDearNess] = useState(basic * (4 / 100));
   const [years, setYears] = useState(1);
   const [gratuity, setGratuity] = useState((ctc * 1.25) / ctc);
-  console.log(ctc, basic, dearNess, gratuity, range);
+  // console.log(ctc, basic, dearNess, gratuity, range);
   const [gross, setGross] = useState(ctc - epf - gratuity);
   const [mediInsurance, setMediInsurance] = useState(600 * 12);
   // avg medical insurance from companies
@@ -21,7 +20,6 @@ function CTC(props) {
   const [hra, setHRA] = useState(11000);
   const [taxable, setTaxable] = useState(0);
   const [inMetro, setInMetro] = useState(props.inMetro);
-  console.log(gross, taxable, profTax, mediInsurance);
   const [inHand, setInhand] = useState(0);
 
   useEffect(() => {
@@ -40,7 +38,6 @@ function CTC(props) {
 
   const getSal = () => {
     setTaxable(parseInt(gross - epf - hra - (mediInsurance * range) / 100));
-    console.log(taxable);
     setInhand(gross - taxable - profTax - mediInsurance);
   };
   return (
